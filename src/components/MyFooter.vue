@@ -7,26 +7,18 @@
         </div>
       </div>
       <div
-        class="flex-1 mt-8 space-y-20 justify-between grid grid-cols-2 md:space-y-0 items-start"
+        class="flex-1 mt-8 gap-y-20 justify-between flex flex-wrap md:space-y-0 items-start"
       >
-        <div
-          v-for="(item, idx) in footerNavs"
-          :key="idx"
-          class="space-y-2 text-gray-600"
-        >
+        <div v-for="(item, idx) in footerNavs" :key="idx" class="w-1/2 m-0">
           <h4 class="text-text-heading font-semibold text-[11px]">
             {{ item.label }}
           </h4>
-          <ul>
-            <li v-for="(el, elIdx) in item.items" :key="elIdx">
-              <a
-                :href="el.href"
-                class="text-text-body duration-150 text-[11px]"
-              >
-                {{ el.name }}
-              </a>
-            </li>
-          </ul>
+
+          <p v-for="(el, elIdx) in item.items" :key="elIdx">
+            <a href="#" class="text-text-body duration-150 text-[11px]">
+              {{ el }}
+            </a>
+          </p>
         </div>
       </div>
       <!-- <div class="mt-10 py-10 border-t items-center justify-between sm:flex">
@@ -124,84 +116,47 @@ export default {
     return {
       footerNavs: [
         {
-          label: "Resources",
+          label: "Helpful Links",
+          items: ["Contact Us", "Site Index", "FAQs", "Feedback"],
+        },
+
+        {
+          label: "On About.USPS.com",
           items: [
-            {
-              href: "javascript:void()",
-              name: "contact",
-            },
-            {
-              href: "javascript:void()",
-              name: "Support",
-            },
-            {
-              href: "javascript:void()",
-              name: "Documentation",
-            },
-            {
-              href: "javascript:void()",
-              name: "Pricing",
-            },
+            "About USPS Home",
+            "Newsroom",
+            "USPS Service Updates",
+            "Forms & Publications",
+            "Government Services",
+          ],
+        },
+
+        {
+          label: "Other USPS Sites",
+          items: [
+            "Business Customer Gateway",
+            "Postal Inspectors",
+            "Inspector General",
+            "Postal Explorer",
+            "National Postal Museum",
+            "Resources for Developers",
+            "PostalPro",
           ],
         },
         {
-          label: "About",
+          label: "Legal Information",
           items: [
-            {
-              href: "javascript:void()",
-              name: "Terms",
-            },
-            {
-              href: "javascript:void()",
-              name: "License",
-            },
-            {
-              href: "javascript:void()",
-              name: "Privacy",
-            },
-            {
-              href: "javascript:void()",
-              name: "About US",
-            },
+            "Privacy Policy",
+            "Terms of Use",
+            "FOIA",
+            "No FEAR Act/EEO Contacts",
+            "Fair Chance Act",
+            "Accessibility Statement",
           ],
         },
         {
-          label: "Explore",
-          items: [
-            {
-              href: "javascript:void()",
-              name: "Showcase",
-            },
-            {
-              href: "javascript:void()",
-              name: "Roadmap",
-            },
-            {
-              href: "javascript:void()",
-              name: "Languages",
-            },
-            {
-              href: "javascript:void()",
-              name: "Blog",
-            },
-          ],
-        },
-        {
-          label: "Company",
-          items: [
-            {
-              href: "javascript:void()",
-              name: "Partners",
-            },
-            {
-              href: "javascript:void()",
-              name: "Team",
-            },
-            {
-              href: "javascript:void()",
-              name: "Careers",
-            },
-          ],
+          label: "USPS Jobs",
+          items: ["Careers"],
         },
       ],
     };
