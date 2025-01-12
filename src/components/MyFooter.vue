@@ -1,21 +1,28 @@
 <template>
-  <footer class="bg-[#f7f7f7]">
+  <footer class="bg-[#f7f7f7] border-t">
     <div class="max-w-screen-xl mx-auto px-4 md:px-8">
       <div class="justify-between items-center md:flex">
-        <div class="flex-1 max-w-lg w-[221px]">
+        <div class="flex-1 max-w-lg w-[221px] py-8">
           <img src="/logo-sb.svg" alt="ups_logo" class="aspect-[8.185]" />
         </div>
       </div>
       <div
-        class="flex-1 mt-8 gap-y-20 justify-between flex flex-wrap md:space-y-0 items-start"
+        class="flex-1 gap-y-20 justify-between flex flex-wrap md:space-y-0 items-start"
       >
         <div v-for="(item, idx) in footerNavs" :key="idx" class="w-1/2 m-0">
-          <h4 class="text-text-heading font-semibold text-[11px]">
+          <h4 class="text-text-heading font-extrabold text-[13px]">
             {{ item.label }}
           </h4>
 
-          <p v-for="(el, elIdx) in item.items" :key="elIdx">
-            <a href="#" class="text-text-body duration-150 text-[11px]">
+          <p
+            v-for="(el, elIdx) in item.items"
+            :key="elIdx"
+            class="leading-snug"
+          >
+            <a
+              href="#"
+              class="text-text-body duration-150 text-[12px] font-bold"
+            >
               {{ el }}
             </a>
           </p>
@@ -107,6 +114,12 @@
         </div>
       </div> -->
     </div>
+    <div class="px-4 text-[11px] my-8">
+      <p>Copyright © 2025 USPS. All Rights Reserved.</p>
+    </div>
+    <div class="mx-4 py-5 border-t border-gray-300 flex gap-8">
+      <img v-for="icon in icons" :src="icon" alt="social_img" :key="icon" class="h-4" />
+    </div>
   </footer>
 </template>
 
@@ -114,6 +127,14 @@
 export default {
   data() {
     return {
+      icons: [
+        "/facebook_logo.png",
+        "/instagram_logo.png",
+        "/pinterest_logo.png",
+        "/threads_logo.png",
+        "/x_logo.png",
+        "/youtube_logo.png",
+      ],
       footerNavs: [
         {
           label: "Helpful Links",
@@ -154,10 +175,10 @@ export default {
             "Accessibility Statement",
           ],
         },
-        {
+        /* {
           label: "USPS Jobs",
           items: ["Careers"],
-        },
+        },*/
       ],
     };
   },
