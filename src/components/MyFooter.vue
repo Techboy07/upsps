@@ -10,7 +10,7 @@
         class="flex-1 gap-y-20 justify-between flex flex-wrap md:space-y-0 items-start"
       >
         <div v-for="(item, idx) in footerNavs" :key="idx" class="w-1/2 m-0">
-          <h4 class="text-text-heading font-extrabold text-[13px]">
+          <h4 class="text-text-heading font-semibold text-[13px]">
             {{ item.label }}
           </h4>
 
@@ -21,7 +21,7 @@
           >
             <a
               href="#"
-              class="text-text-body duration-150 text-[12px] font-bold"
+              class="text-text-body duration-150 text-[12px] font-medium"
             >
               {{ el }}
             </a>
@@ -118,7 +118,13 @@
       <p>Copyright © 2025 USPS. All Rights Reserved.</p>
     </div>
     <div class="mx-4 py-5 border-t border-gray-300 flex gap-8">
-      <img v-for="icon in icons" :src="icon" alt="social_img" :key="icon" class="h-4" />
+      <img
+        v-for="icon in icons"
+        :src="icon"
+        alt="social_img"
+        :key="icon"
+        class="h-4"
+      />
     </div>
   </footer>
 </template>

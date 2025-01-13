@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: Helv;
+    src: url(/fonts/2.woff);
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: Helv2;
+    src: url(/fonts/3.woff);
+    }
+  
+    @font-face {
+      font-family: Helv3;
+      src: url(/fonts/1.woff);
+      }
+    
+
+* {
+    font-family: Helv;
+  }
+
+  .font-helv2 {
+    font-family: Helv2;
+  }
+  .font-helv3 {
+    font-family: Helv3;
+  }

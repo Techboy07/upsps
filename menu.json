@@ -1,0 +1,133 @@
+{
+  "menu": [
+    {
+      "title": "Quick Tools",
+      "icon": "ri-speed-fill",
+      "items": [
+        { "title": "Track a Package", "icon": "ri-truck-line" },
+        { "title": "Informed Delivery", "icon": "ri-mail-open-line" },
+        { "title": "Find USPS Locations", "icon": "ri-map-pin-line" },
+        { "title": "Buy Stamps", "icon": "ri-price-tag-2-line" },
+        { "title": "Schedule a Pickup", "icon": "ri-calendar-check-line" },
+        { "title": "Calculate a Price", "icon": "ri-calculator-line" },
+        { "title": "Look Up a ZIP Code™", "icon": "ri-map-pin-2-line" },
+        { "title": "Hold Mail", "icon": "ri-pause-circle-line" },
+        { "title": "Change My Address", "icon": "ri-home-5-line" },
+        { "title": "Rent/Renew a PO Box", "icon": "ri-building-3-line" },
+        { "title": "Free Boxes", "icon": "ri-box-line" },
+        { "title": "Click-N-Ship", "icon": "ri-printer-line" }
+      ]
+    },
+    {
+      "title": "Send",
+      "icon": "ri-send-plane-line",
+      "items": [
+        { "title": "Sending Mail", "icon": "ri-mail-line" },
+        { "title": "Sending Packages", "icon": "ri-box-2-line" },
+        {
+          "title": "Insurance & Extra Services",
+          "icon": "ri-shield-check-line"
+        },
+        { "title": "Shipping Restrictions", "icon": "ri-close-circle-line" },
+        { "title": "Online Shipping", "icon": "ri-computer-line" },
+        {
+          "title": "Custom Mail, Cards, & Envelopes",
+          "icon": "ri-edit-box-line"
+        },
+        { "title": "Postage Prices", "icon": "ri-price-tag-2-line" }
+      ]
+    },
+    {
+      "title": "Receive",
+      "icon": "ri-inbox-archive-line",
+      "items": [
+        { "title": "Tracking", "icon": "ri-truck-line" },
+        { "title": "Informed Delivery", "icon": "ri-mail-open-line" },
+        { "title": "Intercept a Package", "icon": "ri-close-circle-line" },
+        { "title": "Schedule a Redelivery", "icon": "ri-calendar-check-line" },
+        { "title": "Hold Mail", "icon": "ri-pause-circle-line" },
+        { "title": "Change of Address", "icon": "ri-home-5-line" },
+        { "title": "Rent or Renew PO Box", "icon": "ri-building-3-line" }
+      ]
+    },
+    {
+      "title": "Shop",
+      "icon": "ri-shopping-bag-line",
+      "items": [
+        { "title": "Stamps", "icon": "ri-price-tag-2-line" },
+        { "title": "Shipping Supplies", "icon": "ri-box-2-line" },
+        { "title": "Cards & Envelopes", "icon": "ri-edit-box-line" },
+        { "title": "Personalized Stamped Envelopes", "icon": "ri-edit-line" },
+        { "title": "Collectors", "icon": "ri-heart-3-line" },
+        { "title": "Gifts", "icon": "ri-gift-line" },
+        { "title": "Business Supplies", "icon": "ri-briefcase-line" },
+        { "title": "Money Orders", "icon": "ri-money-dollar-circle-line" },
+        { "title": "Returns & Exchanges", "icon": "ri-arrow-left-right-line" }
+      ]
+    },
+    {
+      "title": "Business",
+      "icon": "ri-building-line",
+      "items": [
+        { "title": "Calculate a Business Price", "icon": "ri-calculator-line" },
+        { "title": "Every Door Direct Mail", "icon": "ri-mail-send-line" },
+        { "title": "Business Shipping", "icon": "ri-truck-line" },
+        { "title": "Advertising with Mail", "icon": "ri-megaphone-line" },
+        { "title": "USPS Connect", "icon": "ri-link-line" },
+        { "title": "Postage Options", "icon": "ri-price-tag-2-line" },
+        { "title": "Returns Services", "icon": "ri-arrow-left-right-line" },
+        {
+          "title": "International Business Shipping",
+          "icon": "ri-global-line"
+        },
+        { "title": "Managing Business Mail", "icon": "ri-inbox-archive-line" },
+        { "title": "USPS & Web Tools APIs", "icon": "ri-computer-line" },
+        { "title": "Prices", "icon": "ri-price-tag-2-line" }
+      ]
+    },
+    {
+      "title": "International",
+      "icon": "ri-global-line",
+      "items": [
+        {
+          "title": "Calculate International Prices",
+          "icon": "ri-calculator-line"
+        },
+        { "title": "Print International Labels", "icon": "ri-printer-line" },
+        { "title": "Print Customs Forms", "icon": "ri-file-paper-2-line" },
+        { "title": "International Sending", "icon": "ri-send-plane-line" },
+        {
+          "title": "Military & Diplomatic Mail",
+          "icon": "ri-shield-user-line"
+        },
+        {
+          "title": "Sending Money Abroad",
+          "icon": "ri-money-dollar-circle-line"
+        },
+        { "title": "Passports", "icon": "ri-id-card-line" },
+        {
+          "title": "Comparing International Shipping Services",
+          "icon": "ri-compare-line"
+        },
+        {
+          "title": "Filing an International Claim",
+          "icon": "ri-shield-check-line"
+        },
+        {
+          "title": "Requesting an International Refund",
+          "icon": "ri-refund-line"
+        }
+      ]
+    },
+    {
+      "title": "Help",
+      "icon": "ri-question-answer-line",
+      "items": [
+        { "title": "FAQs", "icon": "ri-question-mark-circle-line" },
+        { "title": "Finding Missing Mail", "icon": "ri-alert-line" },
+        { "title": "Filing a Claim", "icon": "ri-shield-check-line" },
+        { "title": "Requesting a Refund", "icon": "ri-refund-line" }
+      ]
+    }
+  ]
+}
