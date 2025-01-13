@@ -2,9 +2,9 @@
   <div>
     <div
       :class="
-        !filled ? 'border-2 border-main-red ' : 'border-2 border-text-heading '
+        !filled ? 'border-2 border-red-500 ' : 'border-2 border-text-heading '
       "
-      class="relative px-4 rounded-md opacity-70 text-main-text input-wrapper flex flex-col-reverse py-2 justify-center"
+      class="relative rounded-md opacity-70 text-main-text input-wrapper flex flex-col-reverse justify-center"
       @click="focusInput"
       @mouseleave="setFilled"
     >
@@ -16,13 +16,12 @@
         ref="myIn"
         :type="type"
         :class="filled ? 'filled' : ''"
-        class="font duration-300 border-0 outline-0 bg-inherit input"
+        class="font duration-300 border-0 outline-0 bg-inherit input py-2 px-4"
       />
 
-      <!-- <div class="text-main-red flex" v-if="!filled">
-  <i class="ri-close-circle-line"></i>
-      <p>{{ errMsg }}</p>
-    </div> -->
+      <div class="text-main-red flex" v-if="!filled">
+        <p>{{ errMsg }}</p>
+      </div>
     </div>
   </div>
 </template>

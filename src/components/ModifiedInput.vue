@@ -2,9 +2,9 @@
   <div>
     <div
       :class="
-        !filled ? 'border-2 border-main-red ' : 'border-2 border-text-heading '
+        !filled ? 'border-2 border-red-500 ' : 'border-2 border-text-heading '
       "
-      class="relative px-4 rounded-md opacity-70 text-main-text input-wrapper flex flex-col-reverse py-2 justify-center"
+      class="relative rounded-md opacity-70 text-main-text input-wrapper flex flex-col-reverse justify-center"
       @click="focusInput"
       @mouseleave="setFilled"
     >
@@ -15,7 +15,7 @@
         ref="myIn"
         :type="type"
         :class="filled ? 'filled' : ''"
-        class="font-medim duration-300 border-0 outline-0 bg-inherit input"
+        class="font-medim duration-300 border-0 outline-0 bg-inherit input py-2 px-4"
         :placeholder="label"
       />
       <button class="absolute right-4 max-w-8" @click="buttonWork">
