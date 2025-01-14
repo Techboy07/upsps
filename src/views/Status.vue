@@ -1,6 +1,6 @@
 <template>
-  <div class="px-4 pt-5">
-    <h4 class="text-text-heading text-xl font-extrabold my-3">
+  <div class="px-4 pt-14">
+    <h4 class="text-text-heading text-xl font-extrabold my-5">
       Delivery status
     </h4>
 

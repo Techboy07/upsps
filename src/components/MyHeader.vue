@@ -1,7 +1,6 @@
 <template>
   <nav
-    class="flex justify-between items-center px-5 py-2 border-b-4 border-red-700 fixed top-0 w-full bg-[#f7f7f7] z-50 md:hidden"
-  >
+    class="flex justify-between items-center px-5 py-2 border-b-4 border-red-700 fixed top-0 w-full bg-[#f7f7f7] z-50 lg:hidden">
     <button class="p-2 h-10 hover:border" @click="toggleNav">
       <img v-if="state.openNav" class="h-full" src="/close_x.svg" alt="" />
       <img v-else class="h-full" src="/header-img/hamburger.svg" alt="" />
@@ -14,22 +13,22 @@
       <img v-else class="h-full" src="/header-img/search.svg" alt="" />
     </button>
   </nav>
-  <nav
-    class="fixed z-50 top-0 w-full bg-[#f7f7f7] px-5 py-5 flex items-center gap-4"
-  >
+  <nav class="hidden fixed z-50 top-0 w-full bg-[#f7f7f7] pl-5 lg:flex items-center gap-4">
     <div class="w-max max-w-max">
-      <img src="/public/logo-sb.svg" alt="" class="w-full max-w-[200px]" />
+      <img src="/public/logo-sb.svg" alt="" class="w-full max-w-[248px]" />
     </div>
-    <div class="w-full flex items-stretch skew-x-[-10deg]">
+    <div class="w-full flex items-stretch bg-[#d8d8d8] ">
       <div
-class="bg-text-heading border-2 border-white skew-x-[-8deg] w-max text-center py-3 px-4 text-white text-sm "
-        >{{menu[0].title}}</div>
-      <div
-        v-for="item in menu2"
-        :key="item.title"
-        class="b border-r-2  skew-x-[-8deg] w-max text-center py-3 px-5 text-sm text-text-heading"
-        >{{item.title}}</div>
+        class="bg-text-heading border-r-8 border-red-600 skew-x-[-15deg] w-max text-center py-2 px-4 text-white text-sm ">
+        {{ menu[0].title }}</div>
+      <div v-for="item in menu2" :key="item.title"
+        class="hover:bg-[#ededed]  skew-x-[-15deg] w-max text-center py-2 px-5 text-sm text-text-heading ">
+        {{ item.title }}</div>
+      <div class="h-10 p-3">
+        <img src="/header-img/search.svg" alt="" class="h-full" />
+      </div>
     </div>
+
   </nav>
 </template>
 <script setup>
