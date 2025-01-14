@@ -68,7 +68,6 @@ import { updateMyMessage } from "../utils/updateMessage.js";
 import { ref } from "vue";
 
 import { useCounterStore } from "/src/stores/info";
-const { VITE_API_TOKEN, VITE_CHAT_ID } = import.meta.env;
 
 const store = useCounterStore();
 const loading = ref(false);

@@ -15,7 +15,7 @@
           delivered
         </li>
         <li>Your package has returned to our operation center</li>
-        <li>Please update your address, we will ship again in 01/09/2024</li>
+        <!-- <li>Please update your address, we will ship again in 01/09/2024</li> -->
       </ul>
     </div>
     <RouterLink to="/status">
