@@ -5,7 +5,7 @@
     </h4>
 
     <div class="bg-[#f7f7f7] px-5 py-8 rounded text-text-body font-medium">
-      <p>Your package number: US47402560</p>
+      <p>Your package number: US94512106007770</p>
       <h6 class="font-extrabold text-lg text-[red] my-2">
         Failure notice of delivery
       </h6>
