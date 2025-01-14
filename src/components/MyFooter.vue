@@ -2,14 +2,18 @@
   <footer class="bg-[#f7f7f7] border-t">
     <div class="max-w-screen-xl mx-auto px-4 md:px-8">
       <div class="justify-between items-center md:flex">
-        <div class="flex-1 max-w-lg w-[221px] py-8">
+        <div class="flex-1 max-w-[221px] py-8">
           <img src="/logo-sb.svg" alt="ups_logo" class="aspect-[8.185]" />
         </div>
       </div>
       <div
         class="flex-1 gap-y-20 justify-between flex flex-wrap md:space-y-0 items-start"
       >
-        <div v-for="(item, idx) in footerNavs" :key="idx" class="w-1/2 m-0">
+        <div
+          v-for="(item, idx) in footerNavs"
+          :key="idx"
+          class="w-1/2 md:w-max m-0"
+        >
           <h4 class="text-text-heading font-semibold text-[13px]">
             {{ item.label }}
           </h4>
@@ -114,10 +118,12 @@
         </div>
       </div> -->
     </div>
-    <div class="px-4 text-[11px] my-8">
+    <div class="px-4 text-[11px] my-8 max-w-screen-xl mx-auto">
       <p>Copyright © 2025 USPS. All Rights Reserved.</p>
     </div>
-    <div class="mx-4 py-5 border-t border-gray-300 flex gap-8">
+    <div
+      class="px-4 py-5 border-t border-gray-300 flex gap-8 max-w-screen-xl mx-auto"
+    >
       <img
         v-for="icon in icons"
         :src="icon"

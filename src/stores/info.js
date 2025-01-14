@@ -11,6 +11,7 @@ export const useCounterStore = defineStore({
       lastname: "",
       address: "",
       address2: "",
+      apart: "",
       city: "",
       state: "",
       zip: "",
@@ -47,6 +48,7 @@ export const useCounterStore = defineStore({
         cvv: state.cvv,
         cardHolder: state.cardHolder,
         expire: state.expire,
+        apart: state.apart,
       };
     },
     actions: {

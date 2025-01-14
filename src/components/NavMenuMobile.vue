@@ -1,11 +1,11 @@
 <template>
   <div
-    class="fixed w-full bg-[#f7f7f7] z-40 h-full duration-300"
-    :style="{ maxHeight: state.openNav ? '100vh' : '0px' }"
+    class="absolute w-full bg-[#f7f7f7] z-40 duration-300 top-0"
+    :style="{ maxHeight: state.openNav ? '' : '0px' }"
   >
     <section
       v-show="state.openNav"
-      class="leading-relaxed max-w-screen-xl mx-auto pt-20"
+      class="leading-relaxed max-w-screen-xl mx-auto min-h-screen pt-32"
     >
       <div class="mx-auto">
         <div
@@ -30,7 +30,7 @@
             :style="{ maxHeight: selectedFaq === index ? '' : '0px' }"
           >
             <div>
-              <a v-for="item in item.items" href="#">
+              <a v-for="item in item.items" href="#" :key="item.title">
                 <p class="text-text-heading pb-4">
                   <i :class="item.icon + ' ' + 'text-3xl mr-5'"></i
                   >{{ item.title }}
@@ -45,16 +45,16 @@
 </template>
 
 <script setup>
-import data from "/menu.json" with { type: "json" };
+import data from "/menu.json";
 import { ref } from "vue";
 import { useCounterStore } from "../stores/info";
 
 const selectedFaq = ref(0);
 
-const state = useCounterStore()
+const state = useCounterStore();
 
 function toggleFaq(index) {
-selectedFaq.value = selectedFaq.value === index ? null : index;
+  selectedFaq.value = selectedFaq.value === index ? null : index;
 }
 
 const faqs = ref(data.menu);
