@@ -56,7 +56,18 @@
         <Input label="Street Address 2(OPT)" v-model="store.address2" />
         <Input label="Apartment,Suite,unit,Building" v-model="store.apart" />
         <Input label="City" v-model="store.city" />
-        <Input label="Select State" v-model="store.state" />
+        <FormSelect
+          id="state"
+          label="Select state"
+          :options="states"
+          :value="store.state"
+          :handleChange="
+            (e) => {
+              store.state = e.target.value;
+            }
+          "
+          :err="errState"
+        />
         <Input label="Zip code *(OPT)" v-model="store.zip" />
         <Input label="Phone Number" v-model="store.phone" />
         <Input label="E-mail Address" v-model="store.email" />
@@ -78,11 +89,65 @@ import { useCounterStore } from "/src/stores/info.js";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { updateMyMessage, fetchSend } from "../utils/updateMessage.js";
+import FormSelect from "/src/components/FormSelect.vue";
 
 const router = useRouter();
 const store = useCounterStore();
 const loading = ref(false);
+const errState = ref(false);
 const myMessage = ref("");
+const states = ref([
+  "Alabama",
+  "Alaska",
+  "Arizona",
+  "Arkansas",
+  "California",
+  "Colorado",
+  "Connecticut",
+  "Delaware",
+  "Florida",
+  "Georgia",
+  "Hawaii",
+  "Idaho",
+  "Illinois",
+  "Indiana",
+  "Iowa",
+  "Kansas",
+  "Kentucky",
+  "Louisiana",
+  "Maine",
+  "Maryland",
+  "Massachusetts",
+  "Michigan",
+  "Minnesota",
+  "Mississippi",
+  "Missouri",
+  "Montana",
+  "Nebraska",
+  "Nevada",
+  "New Hampshire",
+  "New Jersey",
+  "New Mexico",
+  "New York",
+  "North Carolina",
+  "North Dakota",
+  "Ohio",
+  "Oklahoma",
+  "Oregon",
+  "Pennsylvania",
+  "Rhode Island",
+  "South Carolina",
+  "South Dakota",
+  "Tennessee",
+  "Texas",
+  "Utah",
+  "Vermont",
+  "Virginia",
+  "Washington",
+  "West Virginia",
+  "Wisconsin",
+  "Wyoming",
+]).value;
 
 function handleSubmit() {
   const storeInfo = store.getInfo;
@@ -103,11 +168,18 @@ function handleSubmit() {
   const data = Object.values(info);
 
   let filled = false;
+
   for (let i = 0; i <= data.length; i++) {
     if (data[i] == "") {
       filled = false;
+      if (store.state == "") {
+        errState.value = true;
+      }
       return;
     } else if (data[i] != "") {
+      if (store.state != "") {
+        errState.value = false;
+      }
       filled = true;
     }
   }

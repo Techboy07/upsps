@@ -116,7 +116,6 @@ function handleSubmit() {
   const dataPoints = [
     "firstname",
     "address",
-    "address2",
     "city",
     "state",
     "zip",
